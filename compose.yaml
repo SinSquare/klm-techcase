@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports: ["80:80"]
+    environment:
+      DB_URL: "postgresql://postgres:password@postgresql:5432/klmprod"
+  postgresql:
+    image: postgres:18.1
+    ports: ["5432:5432"]
+    environment:
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_INITDB_ARGS: "--locale=C.utf8"
+      POSTGRES_DB: "klmprod"
+
+
