@@ -11,11 +11,11 @@ resource "google_project_service" "apis" {
     "cloudresourcemanager.googleapis.com",
     "run.googleapis.com",
     "sqladmin.googleapis.com",
-    "iam.googleapis.com" # Required to manage service accounts/IAM
+    "iam.googleapis.com"
   ])
   project                    = var.project_id
   service                    = each.key
-  disable_on_destroy         = false # Set to true to disable APIs on destroy
+  disable_on_destroy         = false
   disable_dependent_services = false
 }
 
@@ -90,7 +90,7 @@ resource "google_cloud_run_v2_service" "cloud_run_service" {
     containers {
       image = var.docker_image
       ports {
-        container_port = 8080 # Update this to your application's port
+        container_port = 80 # Update this to your application's port
       }
       env {
         name  = "DB_URL"
