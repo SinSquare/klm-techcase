@@ -11,5 +11,3 @@ services:
       POSTGRES_PASSWORD: "password"
       POSTGRES_INITDB_ARGS: "--locale=C.utf8"
       POSTGRES_DB: "klmprod"
-
-

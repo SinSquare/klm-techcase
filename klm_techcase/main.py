@@ -89,7 +89,6 @@ def delete_note(note_id: int, session: utils.SessionDep):
     return {"ok": True}
 
 
-
 def generate_docs() -> None:  # pragma: no cover
     """Generate OpenAPI docs in public/index.html."""
     openapi_spec = app.openapi()
