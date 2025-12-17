@@ -6,7 +6,7 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY ./klm_techcase /code/klm_techcase
 COPY ./migrations /code/migrations
-COPY ./alembic.ini /code/alembic.
+COPY ./alembic.ini /code/
 
 ADD startup.sh /
 RUN chmod +x /startup.sh
